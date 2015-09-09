@@ -1662,6 +1662,14 @@ ZEND_API int ZEND_FASTCALL concat_function(zval *result, zval *op1, zval *op2) /
 }
 /* }}} */
 
+ZEND_API int ZEND_FASTCALL smokepipe_function(zval *result, zval *op1, zval *op2) /* {{{ */
+{
+	ZVAL_LONG(result, 42);
+	return SUCCESS;
+}
+/* }}} */
+
+
 ZEND_API int string_compare_function_ex(zval *result, zval *op1, zval *op2, zend_bool case_insensitive) /* {{{ */
 {
 	zend_string *str1 = zval_get_string(op1);

@@ -1309,6 +1309,7 @@ simple_list:
 		case ZEND_AST_BINARY_OP:
 			switch (ast->attr) {
 				case ZEND_ADD:                 BINARY_OP(" + ",   200, 200, 201);
+				case ZEND_SMOKEPIPE:           BINARY_OP(" ~! ",  200, 200, 201);
 				case ZEND_SUB:                 BINARY_OP(" - ",   200, 200, 201);
 				case ZEND_MUL:                 BINARY_OP(" * ",   210, 210, 211);
 				case ZEND_DIV:                 BINARY_OP(" / ",   210, 210, 211);
