@@ -202,5 +202,6 @@ END_EXTERN_C()
 #define ZEND_SPACESHIP                       170
 #define ZEND_DECLARE_ANON_CLASS              171
 #define ZEND_DECLARE_ANON_INHERITED_CLASS    172
+#define ZEND_SMOKEPIPE                       173
 
 #endif

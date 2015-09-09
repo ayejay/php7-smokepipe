@@ -715,6 +715,8 @@ ZEND_API binary_op_type get_binary_op(int opcode)
 		case ZEND_ADD:
 		case ZEND_ASSIGN_ADD:
 			return (binary_op_type) add_function;
+		case ZEND_SMOKEPIPE:
+			return (binary_op_type) smokepipe_function;
 		case ZEND_SUB:
 		case ZEND_ASSIGN_SUB:
 			return (binary_op_type) sub_function;

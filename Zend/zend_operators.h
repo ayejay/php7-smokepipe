@@ -327,7 +327,7 @@ again:
 	}
 	return result;
 }
-
+ZEND_API int ZEND_FASTCALL smokepipe_function(zval *result, zval *op1, zval *op2);
 ZEND_API int ZEND_FASTCALL compare_function(zval *result, zval *op1, zval *op2);
 ZEND_API int zval_compare_function(zval *result, zval *op1, zval *op2);
 ZEND_API int numeric_compare_function(zval *result, zval *op1, zval *op2);
