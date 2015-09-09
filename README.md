@@ -1,5 +1,5 @@
-PHP7 WITH SMOKEPIPE
---------------------
+PHP7 With Smokepipe operator
+----------------------------
 
 This is an experiment with new smokepipe(~!) operator over PHP7.
 
@@ -10,9 +10,11 @@ echo 5 ~! 6;
 
 echo 7 * 5 ~! 6; //Precedence level equal to +
 
-HOW TO COMPILE AND RUN
+Easy compliation steps
 ----------------------
 
 - Run buildconf
 - Run ./configure
 - Run make && make install
+
+If you want to read more about it, please visit http://ayejayys.in/smoking-pipe-with-php7/
