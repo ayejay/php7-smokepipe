@@ -1581,6 +1581,11 @@ NEWLINE ("\r"|"\n"|"\r\n")
 	RETURN_TOKEN(T_SR);
 }
 
+<ST_IN_SCRIPTING>"~!" {
+	RETURN_TOKEN(T_SMOKEPIPE);
+}
+
+
 <ST_IN_SCRIPTING>{TOKENS} {
 	RETURN_TOKEN(yytext[0]);
 }

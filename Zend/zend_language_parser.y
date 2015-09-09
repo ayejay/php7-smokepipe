@@ -73,6 +73,7 @@ static YYSIZE_T zend_yytnamerr(char*, const char*);
 %nonassoc '<' T_IS_SMALLER_OR_EQUAL '>' T_IS_GREATER_OR_EQUAL
 %left T_SL T_SR
 %left '+' '-' '.'
+%right T_SMOKEPIPE
 %left '*' '/' '%'
 %right '!'
 %nonassoc T_INSTANCEOF
@@ -130,6 +131,7 @@ static YYSIZE_T zend_yytnamerr(char*, const char*);
 %token T_SPACESHIP "<=> (T_SPACESHIP)"
 %token T_SL "<< (T_SL)"
 %token T_SR ">> (T_SR)"
+%token T_SMOKEPIPE   "~! (T_SMOKEPIPE)"
 %token T_INSTANCEOF  "instanceof (T_INSTANCEOF)"
 %token T_INC "++ (T_INC)"
 %token T_DEC "-- (T_DEC)"
@@ -901,6 +903,7 @@ expr_without_variable:
 	|	expr '^' expr	{ $$ = zend_ast_create_binary_op(ZEND_BW_XOR, $1, $3); }
 	|	expr '.' expr 	{ $$ = zend_ast_create_binary_op(ZEND_CONCAT, $1, $3); }
 	|	expr '+' expr 	{ $$ = zend_ast_create_binary_op(ZEND_ADD, $1, $3); }
+	|	expr T_SMOKEPIPE expr 	{ $$ = zend_ast_create_binary_op(ZEND_ADD, $1, $3); }
 	|	expr '-' expr 	{ $$ = zend_ast_create_binary_op(ZEND_SUB, $1, $3); }
 	|	expr '*' expr	{ $$ = zend_ast_create_binary_op(ZEND_MUL, $1, $3); }
 	|	expr T_POW expr	{ $$ = zend_ast_create_binary_op(ZEND_POW, $1, $3); }
